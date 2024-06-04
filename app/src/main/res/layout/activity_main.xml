@@ -8,4 +8,305 @@
     tools:context=".MainActivity">
 
 
+    <ImageView
+        android:id="@+id/iv_background"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/iv_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+    </ImageView>
+
+    <ImageView
+        android:id="@+id/iv_display"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/iv_display"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_background"
+        app:layout_constraintEnd_toEndOf="@+id/iv_background"
+        app:layout_constraintStart_toStartOf="@+id/iv_background"
+        app:layout_constraintTop_toTopOf="@id/iv_background"
+        app:layout_constraintVertical_bias="0.27"></ImageView>
+
+    <ImageButton
+        android:id="@+id/ibtn_mod"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ibtn_mod"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_display"
+        android:contentDescription="나머지를 계산해주는 버튼"/>
+
+    <ImageButton
+        android:id="@+id/ibtn_parenthess"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ibtn_parentheses"
+        app:layout_constraintStart_toEndOf="@+id/ibtn_mod"
+        app:layout_constraintTop_toTopOf="id/ibtn_mod"
+        app:layout_constraintBottom_toBottomOf="@+id/ibtn_mod"
+        android:layout_marginStart="5dp"
+        android:contentDescription="괄호 버튼"
+        />
+
+    <ImageButton
+        android:id="@+id/ibtn_del"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ibtn_del"
+        app:layout_constraintStart_toEndOf="@+id/ibtn_parenthess"
+        app:layout_constraintTop_toTopOf="id/ibtn_mod"
+        app:layout_constraintBottom_toBottomOf="@+id/ibtn_mod"
+        android:layout_marginStart="5dp"
+        android:contentDescription="방금 입력한것을 삭제하는 버튼"
+        />
+
+    <ImageButton
+        android:id="@+id/ibtn_c"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ibtn_c"
+        app:layout_constraintStart_toEndOf="@+id/ibtn_del"
+        app:layout_constraintTop_toTopOf="id/ibtn_mod"
+        app:layout_constraintBottom_toBottomOf="@+id/ibtn_mod"
+        android:layout_marginStart="5dp"
+        android:contentDescription="클리어 버튼"
+
+        />
+
+    <ImageButton
+        android:id="@+id/ibtn_seven"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ibtn_seven"
+        app:layout_constraintStart_toStartOf="@+id/ibtn_mod"
+        app:layout_constraintTop_toBottomOf="@+id/ibtn_mod"
+        android:layout_marginTop="5dp"
+        android:contentDescription="숫자 7 버튼"/>
+
+    <ImageButton
+        android:id="@+id/ibtn_eight"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ibtn_eight"
+        app:layout_constraintStart_toEndOf="@+id/ibtn_seven"
+        app:layout_constraintTop_toBottomOf="@+id/ibtn_parenthess"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:contentDescription="숫자 8 버튼"
+        />
+
+    <ImageButton
+        android:id="@+id/ibtn_nine"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ibtn_nine"
+        app:layout_constraintStart_toEndOf="@+id/ibtn_eight"
+        app:layout_constraintTop_toBottomOf="@+id/ibtn_del"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:contentDescription="숫자 9 버튼"
+        />
+
+    <ImageButton
+        android:id="@+id/ibtn_divide"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ibtn_divide"
+        app:layout_constraintStart_toEndOf="@+id/ibtn_nine"
+        app:layout_constraintTop_toBottomOf="@+id/ibtn_c"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:contentDescription="나누기 버튼"
+        />
+    <ImageButton
+        android:id="@+id/ibtn_four"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ibtn_four"
+        app:layout_constraintStart_toStartOf="@+id/ibtn_mod"
+        app:layout_constraintTop_toBottomOf="@+id/ibtn_seven"
+        android:layout_marginTop="5dp"
+        android:contentDescription="숫자 4 버튼"/>
+
+    <ImageButton
+        android:id="@+id/ibtn_five"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ibtn_five"
+        app:layout_constraintStart_toEndOf="@+id/ibtn_four"
+        app:layout_constraintTop_toBottomOf="@+id/ibtn_eight"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:contentDescription="숫자 5버튼"
+        />
+
+    <ImageButton
+        android:id="@+id/ibtn_six"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ibtn_six"
+        app:layout_constraintStart_toEndOf="@+id/ibtn_five"
+        app:layout_constraintTop_toBottomOf="@+id/ibtn_nine"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:contentDescription="숫자 6 버튼"
+        />
+
+    <ImageButton
+        android:id="@+id/ibtn_multiple"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ibtn_multiple"
+        app:layout_constraintStart_toEndOf="@+id/ibtn_six"
+        app:layout_constraintTop_toBottomOf="@+id/ibtn_divide"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:contentDescription="곱하기버튼"
+        />
+
+    <ImageButton
+        android:id="@+id/ibtn_one"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ibtn_one"
+        app:layout_constraintStart_toStartOf="@+id/ibtn_mod"
+        app:layout_constraintTop_toBottomOf="@+id/ibtn_four"
+        android:layout_marginTop="5dp"
+        android:contentDescription="숫자 1 버튼"/>
+
+    <ImageButton
+        android:id="@+id/ibtn_two"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ibtn_two"
+        app:layout_constraintStart_toEndOf="@+id/ibtn_one"
+        app:layout_constraintTop_toBottomOf="@+id/ibtn_five"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:contentDescription="숫자 2 버튼"
+        />
+
+    <ImageButton
+        android:id="@+id/ibtn_three"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ibtn_three"
+        app:layout_constraintStart_toEndOf="@+id/ibtn_two"
+        app:layout_constraintTop_toBottomOf="@+id/ibtn_six"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:contentDescription="숫자 3 버튼"
+        />
+
+    <ImageButton
+        android:id="@+id/ibtn_minus"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ibtn_minus"
+        app:layout_constraintStart_toEndOf="@+id/ibtn_three"
+        app:layout_constraintTop_toBottomOf="@+id/ibtn_multiple"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:contentDescription="빼기 버튼"
+        />
+
+    <ImageButton
+        android:id="@+id/ibtn_zero"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:background="@android:color/transparent"
+        android:contentDescription="숫자 0 버튼"
+        android:src="@drawable/ibtn_zero"
+        android:layout_marginTop="5dp"
+        app:layout_constraintStart_toStartOf="@+id/ibtn_mod"
+        app:layout_constraintTop_toBottomOf="@+id/ibtn_one" />
+
+    <ImageButton
+        android:id="@+id/ibtn_dot"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:adjustViewBounds="true"
+        android:background="@android:color/transparent"
+        android:contentDescription="소숫점 버튼"
+        android:src="@drawable/ibtn_dot"
+        app:layout_constraintStart_toEndOf="@+id/ibtn_zero"
+        app:layout_constraintTop_toBottomOf="@+id/ibtn_two" />
+
+    <ImageButton
+        android:id="@+id/ibtn_equal"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:adjustViewBounds="true"
+        android:background="@android:color/transparent"
+        android:contentDescription="는 버튼"
+        android:src="@drawable/ibtn_equal"
+        app:layout_constraintStart_toEndOf="@+id/ibtn_dot"
+        app:layout_constraintTop_toBottomOf="@+id/ibtn_three" />
+
+    <ImageButton
+        android:id="@+id/ibtn_plus"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:adjustViewBounds="true"
+        android:background="@android:color/transparent"
+        android:contentDescription="더하기 버튼"
+        android:src="@drawable/ibtn_plus"
+        app:layout_constraintStart_toEndOf="@+id/ibtn_equal"
+        app:layout_constraintTop_toBottomOf="@+id/ibtn_minus" />
+
+
+
+
+
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
