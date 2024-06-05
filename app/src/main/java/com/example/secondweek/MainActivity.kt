@@ -90,13 +90,36 @@ class MainActivity : AppCompatActivity() {
 
     private fun calculateResult() {
         val numbers = stringAnalyze.filterNumbers(currentInput)
-        val result = calculator.add(numbers)
-        displayText.text = result
-        currentInput = result
+        val operators = stringAnalyze.filterOperators(currentInput)
+
+        if (numbers.isEmpty() || operators.isEmpty()){
+            displayText.text = "there's no number"
+            return
+        }
+
+        var result = ""
+
+        for (i in operators.indices) {
+            result = when(operators[i]){
+                "+" -> calculator.add(numbers)
+                "-" -> calculator.subtract(numbers)
+                "*" -> calculator.multiply(numbers)
+                "/" -> calculator.divide(numbers)
+                "%" -> calculator.mod(numbers)
+                else -> {
+                    displayText.text = "Error"
+                    return
+                }
+            }
+        }
+            displayText.text = result
+            currentInput = result
+        }
+
 
 
     }
-}
+
 
 
 
