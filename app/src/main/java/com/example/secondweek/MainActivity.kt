@@ -1,5 +1,6 @@
 package com.example.secondweek
 
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
@@ -16,6 +17,7 @@ class MainActivity : AppCompatActivity() {
     private val calculator = Calculator()
 
     private lateinit var binding: ActivityMainBinding
+    private lateinit var mediaPlayer: MediaPlayer
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,6 +30,8 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        mediaPlayer = MediaPlayer.create(this,R.raw.vintage)
 
         displayText = binding.tvDisplay
 
@@ -55,6 +59,7 @@ class MainActivity : AppCompatActivity() {
 
         for (button in numberButtonList) {
             button.setOnClickListener {
+                playSound()
                 addCurrentInput(button.contentDescription.toString())
 
             }
@@ -62,19 +67,23 @@ class MainActivity : AppCompatActivity() {
 
         for (button in operatorButtonList){
             button.setOnClickListener {
+                playSound()
                 addOperatorInput(button.contentDescription.toString())
             }
         }
 
         binding.ibtnC.setOnClickListener {
+            playSound()
             clearAll()
         }
 
         binding.ibtnDel.setOnClickListener {
+            playSound()
             deleteLast()
         }
 
         binding.ibtnEqual.setOnClickListener {
+            playSound()
             calculateResult()
         }
 
@@ -130,6 +139,20 @@ class MainActivity : AppCompatActivity() {
             displayText.text = result
             currentInput = result
         }
+
+    private fun playSound(){
+        if(mediaPlayer.isPlaying){
+            mediaPlayer.stop()
+            mediaPlayer.release()
+            mediaPlayer = MediaPlayer.create(this, R.raw.vintage)
+        }
+        mediaPlayer.start()
+    }
+
+    override fun onDestroy(){
+        super.onDestroy()
+        mediaPlayer.release()
+    }
 
     }
 

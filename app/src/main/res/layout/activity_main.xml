@@ -88,7 +88,8 @@
         app:layout_constraintEnd_toEndOf="@id/iv_display"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintVertical_bias="0.05"
-        app:layout_constraintHorizontal_bias="0.05"/>
+        app:layout_constraintHorizontal_bias="0.05"
+        android:soundEffectsEnabled="false"/>
 
     <ImageButton
         android:id="@+id/ibtn_parenthess"
@@ -102,6 +103,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/ibtn_mod"
         android:layout_marginStart="5dp"
         android:contentDescription="()"
+        android:soundEffectsEnabled="false"
         />
 
     <ImageButton
@@ -116,6 +118,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/ibtn_mod"
         android:layout_marginStart="5dp"
         android:contentDescription="del"
+        android:soundEffectsEnabled="false"
         />
 
     <ImageButton
@@ -130,6 +133,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/ibtn_mod"
         android:layout_marginStart="5dp"
         android:contentDescription="clear"
+        android:soundEffectsEnabled="false"
 
         />
 
@@ -143,7 +147,8 @@
         app:layout_constraintStart_toStartOf="@+id/ibtn_mod"
         app:layout_constraintTop_toBottomOf="@+id/ibtn_mod"
         android:layout_marginTop="5dp"
-        android:contentDescription="7"/>
+        android:contentDescription="7"
+        android:soundEffectsEnabled="false"/>
 
     <ImageButton
         android:id="@+id/ibtn_eight"
@@ -157,6 +162,7 @@
         android:layout_marginStart="5dp"
         android:layout_marginTop="5dp"
         android:contentDescription="8"
+        android:soundEffectsEnabled="false"
         />
 
     <ImageButton
@@ -171,6 +177,7 @@
         android:layout_marginStart="5dp"
         android:layout_marginTop="5dp"
         android:contentDescription="9"
+        android:soundEffectsEnabled="false"
         />
 
     <ImageButton
@@ -185,6 +192,7 @@
         android:layout_marginStart="5dp"
         android:layout_marginTop="5dp"
         android:contentDescription="/"
+        android:soundEffectsEnabled="false"
         />
     <ImageButton
         android:id="@+id/ibtn_four"
@@ -196,7 +204,8 @@
         app:layout_constraintStart_toStartOf="@+id/ibtn_mod"
         app:layout_constraintTop_toBottomOf="@+id/ibtn_seven"
         android:layout_marginTop="5dp"
-        android:contentDescription="4"/>
+        android:contentDescription="4"
+        android:soundEffectsEnabled="false"/>
 
     <ImageButton
         android:id="@+id/ibtn_five"
@@ -210,6 +219,7 @@
         android:layout_marginStart="5dp"
         android:layout_marginTop="5dp"
         android:contentDescription="5"
+        android:soundEffectsEnabled="false"
         />
 
     <ImageButton
@@ -224,6 +234,7 @@
         android:layout_marginStart="5dp"
         android:layout_marginTop="5dp"
         android:contentDescription="6"
+        android:soundEffectsEnabled="false"
         />
 
     <ImageButton
@@ -238,6 +249,7 @@
         android:layout_marginStart="5dp"
         android:layout_marginTop="5dp"
         android:contentDescription="*"
+        android:soundEffectsEnabled="false"
         />
 
     <ImageButton
@@ -250,7 +262,8 @@
         app:layout_constraintStart_toStartOf="@+id/ibtn_mod"
         app:layout_constraintTop_toBottomOf="@+id/ibtn_four"
         android:layout_marginTop="5dp"
-        android:contentDescription="1"/>
+        android:contentDescription="1"
+        android:soundEffectsEnabled="false"/>
 
     <ImageButton
         android:id="@+id/ibtn_two"
@@ -264,6 +277,7 @@
         android:layout_marginStart="5dp"
         android:layout_marginTop="5dp"
         android:contentDescription="2"
+        android:soundEffectsEnabled="false"
         />
 
     <ImageButton
@@ -278,6 +292,7 @@
         android:layout_marginStart="5dp"
         android:layout_marginTop="5dp"
         android:contentDescription="3"
+        android:soundEffectsEnabled="false"
         />
 
     <ImageButton
@@ -292,6 +307,7 @@
         android:layout_marginStart="5dp"
         android:layout_marginTop="5dp"
         android:contentDescription="-"
+        android:soundEffectsEnabled="false"
         />
 
     <ImageButton
@@ -304,7 +320,8 @@
         android:src="@drawable/pressedmotion_zero"
         android:layout_marginTop="5dp"
         app:layout_constraintStart_toStartOf="@+id/ibtn_mod"
-        app:layout_constraintTop_toBottomOf="@+id/ibtn_one" />
+        app:layout_constraintTop_toBottomOf="@+id/ibtn_one"
+        android:soundEffectsEnabled="false"/>
 
     <ImageButton
         android:id="@+id/ibtn_dot"
@@ -317,7 +334,8 @@
         android:contentDescription="."
         android:src="@drawable/pressedmotion_dot"
         app:layout_constraintStart_toEndOf="@+id/ibtn_zero"
-        app:layout_constraintTop_toBottomOf="@+id/ibtn_two" />
+        app:layout_constraintTop_toBottomOf="@+id/ibtn_two"
+        android:soundEffectsEnabled="false"/>
 
     <ImageButton
         android:id="@+id/ibtn_equal"
@@ -330,7 +348,8 @@
         android:contentDescription="="
         android:src="@drawable/pressedmotion_equal"
         app:layout_constraintStart_toEndOf="@+id/ibtn_dot"
-        app:layout_constraintTop_toBottomOf="@+id/ibtn_three" />
+        app:layout_constraintTop_toBottomOf="@+id/ibtn_three"
+        android:soundEffectsEnabled="false"/>
 
     <ImageButton
         android:id="@+id/ibtn_plus"
@@ -343,7 +362,8 @@
         android:contentDescription="+"
         android:src="@drawable/pressedmotion_plus"
         app:layout_constraintStart_toEndOf="@+id/ibtn_equal"
-        app:layout_constraintTop_toBottomOf="@+id/ibtn_minus" />
+        app:layout_constraintTop_toBottomOf="@+id/ibtn_minus"
+        android:soundEffectsEnabled="false"/>
 
 
 
