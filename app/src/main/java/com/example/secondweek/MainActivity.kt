@@ -78,7 +78,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun clearAll() {
         currentInput = ""
-        displayText.text = "HELLO"
+        displayText.text = "Hello"
     }
 
     private fun deleteLast() {
