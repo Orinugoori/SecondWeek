@@ -2,20 +2,21 @@ package com.example.secondweek
 
 class Calculator {
 
-    fun add(numbers: List<Number>): String {
+    fun add(numbers: List<Number>): Number{
         return if (numbers.isEmpty()) {
-            "0"
+            0
         } else {
             val sum = numbers.sumOf { it.toDouble() }
+
             if (sum % 1.0 == 0.0) {
-                sum.toInt().toString()
+                sum.toInt()
             } else {
-                sum.toString()
+                sum
             }
         }
     }
 
-    fun subtract(numbers: List<Number>): String {
+    fun subtract(numbers: List<Number>): Number {
 
         var calculateNumber = numbers[0].toDouble()
 
@@ -24,27 +25,27 @@ class Calculator {
         }
 
         return if (calculateNumber % 1.0 == 0.0) {
-            calculateNumber.toInt().toString()
+            calculateNumber.toInt()
         } else {
-            calculateNumber.toString()
+            calculateNumber
         }
 
     }
 
 
-    fun multiply(numbers: List<Number>): String {
+    fun multiply(numbers: List<Number>): Number {
         var calculateNumber = numbers[0].toDouble()
         for (i in 1 until numbers.size) {
             calculateNumber *= numbers[i].toDouble()
         }
         return if (calculateNumber % 1.0 == 0.0) {
-            calculateNumber.toInt().toString()
+            calculateNumber.toInt()
         } else {
-            calculateNumber.toString()
+            calculateNumber
         }
     }
 
-    fun divide(numbers: List<Number>): String {
+    fun divide(numbers: List<Number>): Number {
         var quotient = numbers[0].toDouble()
 
         for (i in 1 until numbers.size) {
@@ -52,22 +53,22 @@ class Calculator {
         }
 
         return if (quotient % 1.0 == 0.0) {
-            quotient.toInt().toString()
+            quotient.toInt()
         } else {
-            quotient.toString()
+            quotient
         }
     }
 
 
-    fun mod(numbers: List<Number>): String {
+    fun mod(numbers: List<Number>): Number {
         var calculateNumber = numbers[0].toDouble()
         for (i in 1 until numbers.size) {
             calculateNumber %= numbers[i].toDouble()
         }
         return if (calculateNumber % 1.0 == 0.0) {
-            calculateNumber.toInt().toString() // 정수로 반환
+            calculateNumber.toInt()
         } else {
-            calculateNumber.toString() // 실수로 반환
+            calculateNumber
         }
     }
 
