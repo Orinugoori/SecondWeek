@@ -5,13 +5,15 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/black"
     tools:context=".MainActivity">
 
 
-    <ImageView
+<!--    <ImageView
         android:id="@+id/iv_background"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:background="@android:color/transparent"
         android:scaleType="fitCenter"
         android:src="@drawable/iv_background"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -19,20 +21,36 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintVertical_bias="1.0">
+
+    </ImageView>-->
+
+    <ImageView
+        android:id="@+id/iv_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent"
+        android:src="@drawable/iv_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
     </ImageView>
 
     <ImageView
         android:id="@+id/iv_display"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="fitXY"
         android:src="@drawable/iv_display"
         app:layout_constraintBottom_toBottomOf="@+id/iv_background"
         app:layout_constraintEnd_toEndOf="@+id/iv_background"
+        app:layout_constraintHeight_percent="0.2"
         app:layout_constraintStart_toStartOf="@+id/iv_background"
         app:layout_constraintTop_toTopOf="@id/iv_background"
-        app:layout_constraintVertical_bias="0.27">
+        app:layout_constraintVertical_bias="0.3"
+        app:layout_constraintWidth_percent="0.8">
 
     </ImageView>
 
@@ -40,25 +58,21 @@
         android:id="@+id/tv_display"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_margin="10dp"
         android:fontFamily="@font/gpz_video_tape"
         android:gravity="end|bottom"
         android:maxLines="2"
-        android:paddingEnd="16dp"
-        android:paddingStart="16dp"
-        android:paddingBottom="5dp"
-        android:paddingTop="5dp"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:paddingBottom="10dp"
         android:text="Hello"
         android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="@id/iv_background"
-        app:layout_constraintEnd_toEndOf="@id/iv_background"
-        app:layout_constraintStart_toStartOf="@id/iv_background"
-        app:layout_constraintTop_toTopOf="@id/iv_background"
-        app:layout_constraintVertical_bias="0.28"
-        app:layout_constraintHeight_percent="0.11"
-        app:layout_constraintWidth_percent="0.62">
+        app:layout_constraintBottom_toBottomOf="@id/iv_display"
+        app:layout_constraintEnd_toEndOf="@id/iv_display"
+        app:layout_constraintStart_toStartOf="@id/iv_display"
+        app:layout_constraintTop_toTopOf="@id/iv_display">
+
     </TextView>
-
-
 
 
     <ImageButton
@@ -66,13 +80,15 @@
         android:layout_width="70dp"
         android:layout_height="wrap_content"
         android:adjustViewBounds="true"
-        android:src="@drawable/pressedmotion_mod"
         android:background="@android:color/transparent"
-        android:layout_marginTop="40dp"
-        android:layout_marginStart="50dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_display"
-        android:contentDescription="%"/>
+        android:contentDescription="%"
+        android:src="@drawable/pressedmotion_mod"
+        app:layout_constraintTop_toBottomOf="@id/iv_display"
+        app:layout_constraintStart_toStartOf="@+id/iv_display"
+        app:layout_constraintEnd_toEndOf="@id/iv_display"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.05"
+        app:layout_constraintHorizontal_bias="0.05"/>
 
     <ImageButton
         android:id="@+id/ibtn_parenthess"

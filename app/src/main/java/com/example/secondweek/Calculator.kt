@@ -9,12 +9,10 @@ open class Calculator {
         "/" to DivideOperation(),
         "%" to ModOperation()
     )
-
     fun calculate(numbers: List<Number>, operator : String): Number {
         val operation = operations[operator] ?: throw IllegalArgumentException ("invalid operator")
         return operation.apply(numbers)
     }
-
 
 }
 
