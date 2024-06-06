@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
 
         displayText = binding.tvDisplay
 
-        val buttonList = listOf(
+        val numberButtonList = listOf(
             binding.ibtnSeven,
             binding.ibtnEight,
             binding.ibtnNine,
@@ -42,6 +42,9 @@ class MainActivity : AppCompatActivity() {
             binding.ibtnTwo,
             binding.ibtnThree,
             binding.ibtnZero,
+        )
+
+        val operatorButtonList = listOf(
             binding.ibtnDot,
             binding.ibtnPlus,
             binding.ibtnMinus,
@@ -50,10 +53,16 @@ class MainActivity : AppCompatActivity() {
             binding.ibtnMod
         )
 
-        for (button in buttonList) {
+        for (button in numberButtonList) {
             button.setOnClickListener {
                 addCurrentInput(button.contentDescription.toString())
 
+            }
+        }
+
+        for (button in operatorButtonList){
+            button.setOnClickListener {
+                addOperatorInput(button.contentDescription.toString())
             }
         }
 
@@ -73,6 +82,15 @@ class MainActivity : AppCompatActivity() {
 
     private fun addCurrentInput(letter: String) {
         currentInput += "$letter"
+        displayText.text = currentInput
+    }
+
+    private fun addOperatorInput(unduplicableLetter: String){
+        if( currentInput.isNotEmpty() && "+-*/%.".contains(currentInput.last())){
+            currentInput = currentInput.dropLast(1) + unduplicableLetter
+        }else{
+            currentInput += unduplicableLetter
+        }
         displayText.text = currentInput
     }
 
