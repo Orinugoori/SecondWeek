@@ -2,7 +2,7 @@ package com.example.secondweek
 
 open class Calculator {
 
-    private val operations = mapOf<String, Operation>(
+    private val operations = mapOf<String, AbstractOperation>(
         "+" to AddOperation(),
         "-" to SubstractOperation(),
         "*" to MultiplyOperation(),
