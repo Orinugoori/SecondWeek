@@ -115,26 +115,14 @@ class MainActivity : AppCompatActivity() {
             return
         }
 
-        var calculateResult = listOf(numbers[0])
+        var calculateResult: Number = numbers[0]
 
         for (i in operators.indices) {
             val nextNumber = numbers[i+1]
-            val currentNumbers = listOf(calculateResult.last(), nextNumber)
+            val currentNumbers = listOf(calculateResult, nextNumber)
 
-            calculateResult = listOf(
-                when (operators[i]) {
-                    "+" -> calculator.add(currentNumbers)
-                    "-" -> calculator.subtract(currentNumbers)
-                    "*" -> calculator.multiply(currentNumbers)
-                    "/" -> calculator.divide(currentNumbers)
-                    "%" -> calculator.mod(currentNumbers)
-                    else -> {
-                        displayText.text = "Error"
-                        return
-                    }
-                }
+            calculateResult = calculator.calculate(currentNumbers, operators[i])
 
-            )
         }
 
         val result = calculateResult.toString().removeSurrounding("[","]")
