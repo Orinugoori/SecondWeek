@@ -15,9 +15,11 @@ class MainActivity : AppCompatActivity() {
     private var currentInput = ""
     private val stringAnalyze = StringAnalyze()
     private val calculator = Calculator()
+    private lateinit var sound: Sound
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var mediaPlayer: MediaPlayer
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,9 +33,10 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        mediaPlayer = MediaPlayer.create(this,R.raw.vintage)
+
 
         displayText = binding.tvDisplay
+        sound = Sound(this)
 
         val numberButtonList = listOf(
             binding.ibtnSeven,
@@ -59,7 +62,7 @@ class MainActivity : AppCompatActivity() {
 
         for (button in numberButtonList) {
             button.setOnClickListener {
-                playSound()
+                sound.playSound()
                 addCurrentInput(button.contentDescription.toString())
 
             }
@@ -67,34 +70,32 @@ class MainActivity : AppCompatActivity() {
 
         for (button in operatorButtonList){
             button.setOnClickListener {
-                playSound()
+                sound.playSound()
                 addOperatorInput(button.contentDescription.toString())
             }
         }
 
         binding.ibtnC.setOnClickListener {
-            playSound()
+            sound.playSound()
             clearAll()
         }
 
         binding.ibtnDel.setOnClickListener {
-            playSound()
+            sound.playSound()
             deleteLast()
         }
 
         binding.ibtnEqual.setOnClickListener {
-            playSound()
+            sound.playSound()
             calculateResult()
         }
 
         binding.ibtnParenthesis.setOnClickListener {
-            playSound()
+            sound.playSound()
             addParenthesisInput()
         }
 
     }
-
-
 
 
 
@@ -168,18 +169,11 @@ class MainActivity : AppCompatActivity() {
 
 
 
-    private fun playSound(){
-        if(mediaPlayer.isPlaying){
-            mediaPlayer.stop()
-            mediaPlayer.release()
-            mediaPlayer = MediaPlayer.create(this, R.raw.vintage)
-        }
-        mediaPlayer.start()
-    }
+
 
     override fun onDestroy(){
         super.onDestroy()
-        mediaPlayer.release()
+        sound.release()
     }
 
     }
