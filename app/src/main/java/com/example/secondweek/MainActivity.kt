@@ -87,7 +87,16 @@ class MainActivity : AppCompatActivity() {
             calculateResult()
         }
 
+        binding.ibtnParenthesis.setOnClickListener {
+            playSound()
+            addParenthesisInput()
+        }
+
     }
+
+
+
+
 
     private fun addCurrentInput(letter: String) {
         currentInput += "$letter"
@@ -115,6 +124,22 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    private fun addParenthesisInput(){
+        val actualInput = if (isNextParenthesisOpen(currentInput)){
+            "("
+        }else {
+            ")"
+        }
+        currentInput += actualInput
+        displayText.text = currentInput
+    }
+
+    private fun isNextParenthesisOpen(currentInput: String) : Boolean {
+        val openCount = currentInput.count { it == '(' }
+        val closeCount = currentInput.count { it == ')' }
+        return openCount <= closeCount
+    }
+
     private fun calculateResult() {
         val numbers = stringAnalyze.filterNumbers(currentInput)
         val operators = stringAnalyze.filterOperators(currentInput)
@@ -139,6 +164,9 @@ class MainActivity : AppCompatActivity() {
             displayText.text = result
             currentInput = result
         }
+
+
+
 
     private fun playSound(){
         if(mediaPlayer.isPlaying){
