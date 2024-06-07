@@ -1,19 +1,18 @@
 package com.example.secondweek
 
-open class Calculator {
+open class Calculator(private val operations : Map <Char, AbstractOperation>) {
 
-    private val operations = mapOf<String, AbstractOperation>(
-        "+" to AddOperation(),
-        "-" to SubstractOperation(),
-        "*" to MultiplyOperation(),
-        "/" to DivideOperation(),
-        "%" to ModOperation()
-    )
-    fun calculate(numbers: List<Number>, operator : String): Number {
-        val operation = operations[operator] ?: throw IllegalArgumentException ("invalid operator")
-        return operation.apply(numbers)
+    fun calculate(numbers: List<Number>, operators: List<Char>): Number {
+        val result = numbers[0]
+        for (i in operators.indices) {
+            val nextNumber = numbers[i + 1]
+            val currentNumbers = listOf(result, nextNumber)
+            val operation =
+                operations[operators[i]] ?: throw IllegalArgumentException("invalid operator")
+            return operation.apply(currentNumbers)
+        }
+        return result
     }
-
 }
 
 

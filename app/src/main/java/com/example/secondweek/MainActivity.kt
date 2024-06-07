@@ -13,12 +13,12 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var displayText: TextView
     private var currentInput = ""
-    private val stringAnalyze = StringAnalyze()
-    private val calculator = Calculator()
-    private lateinit var sound: Sound
+
+    private val stringAnalyze : StringFilter = StringAnalyze()
+    private lateinit var calculator : Calculator
+    private lateinit var sound : Sound
 
     private lateinit var binding: ActivityMainBinding
-    private lateinit var mediaPlayer: MediaPlayer
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,6 +37,8 @@ class MainActivity : AppCompatActivity() {
 
         displayText = binding.tvDisplay
         sound = Sound(this)
+
+
 
         val numberButtonList = listOf(
             binding.ibtnSeven,
@@ -95,8 +97,17 @@ class MainActivity : AppCompatActivity() {
             addParenthesisInput()
         }
 
-    }
+        val operations = mapOf(
+            '+' to AddOperation(),
+            '-' to SubstractOperation(),
+            '*' to MultiplyOperation(),
+            '/' to DivideOperation(),
+            '%' to ModOperation()
+        )
 
+        calculator = Calculator(operations)
+
+    }
 
 
     private fun addCurrentInput(letter: String) {
@@ -145,25 +156,17 @@ class MainActivity : AppCompatActivity() {
         val numbers = stringAnalyze.filterNumbers(currentInput)
         val operators = stringAnalyze.filterOperators(currentInput)
 
-        if (numbers.isEmpty() || operators.isEmpty()){
+            if (numbers.isEmpty() || operators.isEmpty()) {
             displayText.text = "there's no number"
             return
         }
 
-        var calculateResult: Number = numbers[0]
+        val calculateResult = calculator.calculate(numbers, operators.map { it[0] })
 
-        for (i in operators.indices) {
-            val nextNumber = numbers[i+1]
-            val currentNumbers = listOf(calculateResult, nextNumber)
+        val result = calculateResult.toString()
 
-            calculateResult = calculator.calculate(currentNumbers, operators[i])
-
-        }
-
-        val result = calculateResult.toString().removeSurrounding("[","]")
-
-            displayText.text = result
-            currentInput = result
+        displayText.text = result
+        currentInput = result
         }
 
 
